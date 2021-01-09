@@ -10,8 +10,8 @@ import java.time.OffsetDateTime;
 public class RentalDO {
 
     private Integer id;
-    private UserDO user;
-    private CarDO car;
+    private Integer userId;
+    private Integer carId;
     private OffsetDateTime startDate;
     private OffsetDateTime endDate;
     private RentalStatusDO status;

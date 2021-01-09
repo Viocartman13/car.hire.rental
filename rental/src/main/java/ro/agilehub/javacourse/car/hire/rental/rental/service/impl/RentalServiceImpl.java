@@ -13,7 +13,7 @@ public class RentalServiceImpl implements RentalService {
 
     @Override
     public Integer createNewRental(RentalDO example) {
-        var userDTOResponseEntity = userApi.getUser(example.getUser().getId());
+        var userDTOResponseEntity = userApi.getUser(example.getUserId());
         return 123;
     }
 
