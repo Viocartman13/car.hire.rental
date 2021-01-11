@@ -7,26 +7,26 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import ro.agilehub.javacourse.car.hire.rental.client.core.model.UserDTO;
-import ro.agilehub.javacourse.car.hire.rental.client.core.specification.UserApi;
+import ro.agilehub.javacourse.car.hire.rental.client.core.model.CarDTO;
+import ro.agilehub.javacourse.car.hire.rental.client.core.specification.FleetApi;
 
 import java.util.NoSuchElementException;
 
-@FeignClient(name = "${user.name:user}", url = "${user.url:http://localhost:8080}")
-public interface UserApiClient extends UserApi {
+@FeignClient(name = "${fleet.name:fleet}", url = "${fleet.url:http://localhost:8080}")
+public interface FleetApiClient extends FleetApi {
     String CORE = "core";
 
     @Override
     @CircuitBreaker(name = CORE, fallbackMethod = "coreFallback")
     @RateLimiter(name = CORE)
-    @GetMapping(value = "/user/{id}")
-    ResponseEntity<UserDTO> getUser(@PathVariable("id") Integer id);
+    @GetMapping(value = "/fleet/{carId}")
+    ResponseEntity<CarDTO> getFleetCar(@PathVariable("carId") Integer carId);
 
-    default ResponseEntity<UserDTO> coreFallback(Integer id, CallNotPermittedException exception) {
+    default ResponseEntity<CarDTO> coreFallback(Integer carId, CallNotPermittedException exception) {
         throw new NoSuchElementException();
     }
 
-    default ResponseEntity<UserDTO> coreFallback(Integer id, Exception exception) {
+    default ResponseEntity<CarDTO> coreFallback(Integer carId, Exception exception) {
         throw new RuntimeException();
     }
 }

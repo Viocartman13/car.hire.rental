@@ -2,19 +2,20 @@ package ro.agilehub.javacourse.car.hire.rental.rental.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ro.agilehub.javacourse.car.hire.rental.client.core.specification.UserApi;
+import ro.agilehub.javacourse.car.hire.rental.rental.repository.RentalRepository;
 import ro.agilehub.javacourse.car.hire.rental.rental.service.definition.RentalService;
 import ro.agilehub.javacourse.car.hire.rental.rental.service.domain.RentalDO;
+import ro.agilehub.javacourse.car.hire.rental.rental.service.mapper.RentalDOMapper;
 
 @Service
 @RequiredArgsConstructor
 public class RentalServiceImpl implements RentalService {
-    private final UserApi userApi;
+    private final RentalRepository rentalRepository;
+    private final RentalDOMapper rentalDOMapper;
 
     @Override
     public Integer createNewRental(RentalDO example) {
-        var userDTOResponseEntity = userApi.getUser(example.getUserId());
-        return 123;
+        return rentalRepository.save(rentalDOMapper.toRental(example)).getId();
     }
 
 }
