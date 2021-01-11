@@ -14,19 +14,19 @@ import java.util.NoSuchElementException;
 
 @FeignClient(name = "${fleet.name:fleet}", url = "${fleet.url:http://localhost:8080}")
 public interface FleetApiClient extends FleetApi {
-    String CORE = "core";
+    String FLEET = "fleet";
 
     @Override
-    @CircuitBreaker(name = CORE, fallbackMethod = "coreFallback")
-    @RateLimiter(name = CORE)
+    @CircuitBreaker(name = FLEET, fallbackMethod = "fleetFallback")
+    @RateLimiter(name = FLEET)
     @GetMapping(value = "/fleet/{carId}")
     ResponseEntity<CarDTO> getFleetCar(@PathVariable("carId") Integer carId);
 
-    default ResponseEntity<CarDTO> coreFallback(Integer carId, CallNotPermittedException exception) {
+    default ResponseEntity<CarDTO> fleetFallback(Integer carId, CallNotPermittedException exception) {
         throw new NoSuchElementException();
     }
 
-    default ResponseEntity<CarDTO> coreFallback(Integer carId, Exception exception) {
+    default ResponseEntity<CarDTO> fleetFallback(Integer carId, Exception exception) {
         throw new RuntimeException();
     }
 }

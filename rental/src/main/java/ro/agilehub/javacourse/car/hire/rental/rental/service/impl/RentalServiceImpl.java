@@ -7,6 +7,8 @@ import ro.agilehub.javacourse.car.hire.rental.rental.service.definition.RentalSe
 import ro.agilehub.javacourse.car.hire.rental.rental.service.domain.RentalDO;
 import ro.agilehub.javacourse.car.hire.rental.rental.service.mapper.RentalDOMapper;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class RentalServiceImpl implements RentalService {
@@ -16,6 +18,11 @@ public class RentalServiceImpl implements RentalService {
     @Override
     public Integer createNewRental(RentalDO example) {
         return rentalRepository.save(rentalDOMapper.toRental(example)).getId();
+    }
+
+    @Override
+    public List<RentalDO> getRentals() {
+        return rentalDOMapper.toRentalDOList(rentalRepository.findAll());
     }
 
 }
