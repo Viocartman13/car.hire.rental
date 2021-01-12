@@ -10,7 +10,7 @@ servers:
     description: local environment
     variables:
       port:
-        default: '8080'
+        default: '8090'
 tags:
   - name: user
     description: User resource
