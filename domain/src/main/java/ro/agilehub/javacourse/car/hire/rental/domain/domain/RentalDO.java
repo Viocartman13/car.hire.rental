@@ -1,4 +1,4 @@
-package ro.agilehub.javacourse.car.hire.rental.rental.service.domain;
+package ro.agilehub.javacourse.car.hire.rental.domain.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

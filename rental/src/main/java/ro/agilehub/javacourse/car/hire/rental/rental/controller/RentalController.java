@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ro.agilehub.javacourse.car.hire.rental.api.model.CreatedDTO;
 import ro.agilehub.javacourse.car.hire.rental.api.model.RentalDTO;
 import ro.agilehub.javacourse.car.hire.rental.api.specification.RentalApi;
+import ro.agilehub.javacourse.car.hire.rental.domain.service.definition.RentalService;
 import ro.agilehub.javacourse.car.hire.rental.rental.controller.mapper.RentalDTOMapper;
-import ro.agilehub.javacourse.car.hire.rental.rental.service.definition.RentalService;
 
 import javax.validation.Valid;
 

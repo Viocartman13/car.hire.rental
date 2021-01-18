@@ -1,10 +1,7 @@
-package ro.agilehub.javacourse.car.hire.rental.rental.service.impl;
+package ro.agilehub.javacourse.car.hire.rental.domain.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ro.agilehub.javacourse.car.hire.rental.client.core.specification.UserApi;
-import ro.agilehub.javacourse.car.hire.rental.rental.service.definition.RentalService;
-import ro.agilehub.javacourse.car.hire.rental.rental.service.domain.RentalDO;
 
 @Service
 @RequiredArgsConstructor

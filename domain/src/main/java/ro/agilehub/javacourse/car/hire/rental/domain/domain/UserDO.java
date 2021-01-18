@@ -1,9 +1,7 @@
-package ro.agilehub.javacourse.car.hire.rental.rental.service.domain;
+package ro.agilehub.javacourse.car.hire.rental.domain.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import ro.agilehub.javacourse.car.hire.rental.api.model.UserStatus;
 
 @Data
 @EqualsAndHashCode(of = "id")
