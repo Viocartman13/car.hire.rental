@@ -9,18 +9,24 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rental</artifactId>
+    <artifactId>repository</artifactId>
+
+    <properties>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>ro.agilehub.javacourse</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>domain</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>ro.agilehub.javacourse</groupId>
-            <artifactId>client.core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <groupId>com.github.ydespreaux.spring.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>0.0.3</version>
         </dependency>
     </dependencies>
+
 </project>

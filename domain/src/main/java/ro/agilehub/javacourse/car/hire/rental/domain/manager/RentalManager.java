@@ -1,8 +1,8 @@
-package ro.agilehub.javacourse.car.hire.rental.domain.service.definition;
+package ro.agilehub.javacourse.car.hire.rental.domain.manager;
 
 import ro.agilehub.javacourse.car.hire.rental.domain.domain.RentalDO;
 
-public interface RentalService {
+public interface RentalManager {
 
     Integer createNewRental(RentalDO example);
 
